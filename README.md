@@ -56,22 +56,6 @@
 
 ---
 
-## 🆕 Innovation
-
-- Rare topic: architecture style recognition via DL is not widely explored
-- Combines academic rigor (multiple model benchmarking) with real-world deployment
-- Mobile AI – no server dependency
-
----
-
-## 🔜 Future Work
-
-- Improve dataset balance and augment underrepresented classes
-- Add GPS and historical info overlay to enhance tourist use case
-- Apply model compression for older devices
-
----
-
 ## ⚠️ License
 
 This project is licensed under the MIT License.  
