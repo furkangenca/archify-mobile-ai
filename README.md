@@ -1,62 +1,102 @@
-# 🧠 Archify – Mobile AI for Architectural Style Recognition
+# 🧠 Archify — Mobile AI for Architectural Style Recognition
 
-**Archify** is a mobile AI application that classifies architectural styles from building images using deep convolutional neural networks. Built for an academic project in deep learning, it combines custom-trained CNNs and transfer learning with a real-time Flutter interface and TensorFlow Lite deployment.
+**Archify** is a mobile deep learning app that classifies architectural styles from building photos.  
+Built with **Flutter** and deployed using **TensorFlow Lite**, it performs real-time predictions entirely on-device.
 
-> 🏛️ Trained on 10,000+ images across 25 architectural styles  
-> 📱 Deployed as an on-device model using TensorFlow Lite  
-> 🎯 Final accuracy: ~57% (Macro F1: 0.56)
+Originally developed as a deep learning graduation project focused on mobile deployment.
+
+> 🏛️ Trained on 10,000+ labeled images across 25 architectural styles  
+> 📱 Deployed with TensorFlow Lite using MobileNetV2  
+
+---
+
+## 🧠 Overview
+
+- Recognizes styles like Art Deco, Gothic, Bauhaus, Romanesque  
+- Trained using transfer learning (MobileNetV2 base, frozen layers)  
+- Optimized for mobile inference using `.tflite`  
+- No internet required — works fully offline
+
+---
+
+## 📷 UI Preview
+
+| Uploaded Image | Predicted Style |
+|----------------|------------------|
+| ![Input](https://github.com/user-attachments/assets/edc05d85-14ab-4d70-a498-02f699af7485) | ![Prediction](https://github.com/user-attachments/assets/45828ee3-7449-493f-b4c9-81e3377fbb34) |
 
 ---
 
 ## 📂 Dataset
 
 - **Source:** [Architectural Styles Dataset (Kaggle)](https://www.kaggle.com/datasets/dumitrux/architectural-styles-dataset)  
-- **Total Images:** 10,113  
-- **Classes:** 25 architectural styles  
-- **Examples:** Art Deco, Gothic, Bauhaus, Byzantine, Romanesque, etc.  
-- **Note:** Dataset includes images from both Google Images and ECCV 2014 research data.
+- **Size:** 10,113 images  
+- **Classes:** 25 styles (e.g. Byzantine, Gothic, Bauhaus, Baroque, etc.)  
+- **Note:** Data gathered from public image search and ECCV 2014 set
 
 ---
 
-## 🧪 Model Development
+## 🧪 Model Summary
 
-### Tested Architectures:
-- Custom CNN (Conv2D + MaxPooling)
-- **MobileNetV2** (best results)
-- EfficientNetB0
-- ResNet50
+- Base model: **MobileNetV2** with frozen convolutional layers  
+- Optimized using Keras Tuner  
+- Final performance (validation set):  
+  - Accuracy: **57%**  
+  - Macro F1: **0.56**
 
-### Tools & Libraries:
-- TensorFlow & Keras
-- Keras Tuner (Hyperparameter optimization)
-- Python
-- Flutter (UI)
-- TensorFlow Lite (deployment)
+### Tools Used
 
----
-
-## 🧠 Results (on validation set)
-
-| Model                  | Accuracy | Macro F1 | Precision | Recall |
-|------------------------|----------|----------|-----------|--------|
-| MobileNetV2 (Frozen)   | 57%      | 0.56     | 0.58      | 0.56   |
-| ResNet50               | 18%      | 0.13     | 0.16      | 0.17   |
-| EfficientNetB0         | 7%       | 0.01     | 0.00      | 0.04   |
-
-> 📌 **MobileNetV2** with frozen layers yielded the best performance for this dataset.
+- TensorFlow · Keras · Keras Tuner  
+- Python · Flutter · TensorFlow Lite
 
 ---
 
 ## 📱 Mobile Deployment
 
-- Final model converted to `.tflite` using TensorFlow Lite
-- Integrated into a **Flutter mobile app**
-- On-device inference: no internet required
-- Predicts architectural style from uploaded building images
+- Model converted to `.tflite` using TensorFlow Lite  
+- Integrated into Flutter application  
+- Predictions are made locally on the device  
+- Upload or take a photo → receive style prediction in real time
+
+---
+
+## ⚙️ Environment
+
+- **Flutter:** 3.22.x  
+- **TensorFlow:** 2.14.x  
+- **Android SDK Target:** 33+
+
+---
+
+## ⚙️ Setup & Run
+
+### Prerequisites
+- Flutter SDK 3.22+
+- Android Studio or VS Code with Flutter extension
+- Android emulator or physical device
+
+### Run the App
+
+```bash
+git clone https://github.com/furkangenca/archify-mobile-ai.git
+cd archify-mobile-ai
+flutter pub get
+flutter run
+```
+
+    📦 Make sure the .tflite model file is located under /assets/model/ and listed in pubspec.yaml.
+
+---
+
+## 📬 Contact
+
+**Furkan Gença**  
+*Graduation Project — B.Sc. Software Engineering (2025)*  
+[@furkangenca](https://github.com/furkangenca)
 
 ---
 
 ## ⚠️ License
 
-This project is licensed under the MIT License.  
-Please refer to the `LICENSE` file for usage permissions.
+> This project is **not open source**.  
+> Code and model are private. For academic presentation only.
