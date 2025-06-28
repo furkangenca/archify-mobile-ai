@@ -1,4 +1,4 @@
-# 🧠 Archify — Mobile AI for Architectural Style Recognition
+# 🏛️ Archify — Mobile AI for Architectural Style Recognition
 
 **Archify** is a mobile deep learning app that classifies architectural styles from building photos.  
 Built with **Flutter** and deployed using **TensorFlow Lite**, it performs real-time predictions entirely on-device.
@@ -93,10 +93,10 @@ flutter run
 **Furkan Gença**  
 *Graduation Project — B.Sc. Software Engineering (2025)*  
 [@furkangenca](https://github.com/furkangenca)
-
 ---
 
-## ⚠️ License
+## 📄 License
 
-> This project is **not open source**.  
-> Code and model are private. For academic presentation only.
+This project is licensed under the [MIT License](./LICENSE).  
+You are free to use, modify, and distribute it under the terms of this license.
+
