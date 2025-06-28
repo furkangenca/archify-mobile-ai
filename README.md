@@ -1,81 +1,73 @@
-# 🏛️ Archify — Mobile AI for Architectural Style Recognition
+# 🏛️ Archify — AI-Powered Mobile App for Architectural Style Recognition
 
-**Archify** is a mobile deep learning app that classifies architectural styles from building photos.  
-Built with **Flutter** and deployed using **TensorFlow Lite**, it performs real-time predictions entirely on-device.
+**Archify** is a Flutter-based mobile application that classifies architectural styles from building photos using an on-device deep learning model.
 
-Originally developed as a deep learning graduation project focused on mobile deployment.
+Originally developed as a B.Sc. graduation project, the app leverages **TensorFlow Lite** and **MobileNetV2** to deliver fast, offline predictions.
 
-> 🏛️ Trained on 10,000+ labeled images across 25 architectural styles  
-> 📱 Deployed with TensorFlow Lite using MobileNetV2  
-
----
-
-## 🧠 Overview
-
-- Recognizes styles like Art Deco, Gothic, Bauhaus, Romanesque  
-- Trained using transfer learning (MobileNetV2 base, frozen layers)  
-- Optimized for mobile inference using `.tflite`  
-- No internet required — works fully offline
+> 🏛️ Trained on 10K+ images across 25 architectural styles  
+> 📱 Real-time inference with TensorFlow Lite, no internet required
 
 ---
 
-## 📷 UI Preview
+## 🧠 Key Features
 
-| Uploaded Image | Predicted Style |
-|----------------|------------------|
+- Classifies styles such as Art Deco, Gothic, Bauhaus, Romanesque, etc.
+- Uses transfer learning with frozen **MobileNetV2** base layers
+- Model optimized for mobile inference (`.tflite`)
+- Fully offline — no server or cloud dependency
+
+---
+
+## 📷 Demo Preview
+
+| Input Image | Prediction |
+|------------|------------|
 | ![Input](https://github.com/user-attachments/assets/edc05d85-14ab-4d70-a498-02f699af7485) | ![Prediction](https://github.com/user-attachments/assets/45828ee3-7449-493f-b4c9-81e3377fbb34) |
 
 ---
 
-## 📂 Dataset
+## 📊 Dataset
 
 - **Source:** [Architectural Styles Dataset (Kaggle)](https://www.kaggle.com/datasets/dumitrux/architectural-styles-dataset)  
 - **Size:** 10,113 images  
-- **Classes:** 25 styles (e.g. Byzantine, Gothic, Bauhaus, Baroque, etc.)  
-- **Note:** Data gathered from public image search and ECCV 2014 set
+- **Classes:** 25 architectural styles  
+- **Origin:** Public image search and ECCV 2014 dataset
 
 ---
 
-## 🧪 Model Summary
+## 🧪 Model Overview
 
-- Base model: **MobileNetV2** with frozen convolutional layers  
-- Optimized using Keras Tuner  
-- Final performance (validation set):  
-  - Accuracy: **57%**  
-  - Macro F1: **0.56**
+- **Architecture:** MobileNetV2 (transfer learning, frozen conv layers)  
+- **Tuning:** Hyperparameters optimized with **Keras Tuner**  
+- **Performance:**  
+  - Accuracy: **57%** (validation)  
+  - Macro F1-score: **0.56**
 
-### Tools Used
+### Stack
 
 - TensorFlow · Keras · Keras Tuner  
 - Python · Flutter · TensorFlow Lite
 
 ---
 
-## 📱 Mobile Deployment
+## 📱 Mobile Integration
 
-- Model converted to `.tflite` using TensorFlow Lite  
-- Integrated into Flutter application  
-- Predictions are made locally on the device  
-- Upload or take a photo → receive style prediction in real time
-
----
-
-## ⚙️ Environment
-
-- **Flutter:** 3.22.x  
-- **TensorFlow:** 2.14.x  
-- **Android SDK Target:** 33+
+- `.tflite` model deployed inside Flutter app  
+- Inference runs locally on device (Android)  
+- Instant predictions from captured or uploaded images
 
 ---
 
 ## ⚙️ Setup & Run
 
-### Prerequisites
-- Flutter SDK 3.22+
-- Android Studio or VS Code with Flutter extension
+### Requirements
+- Flutter 3.22+  
+- TensorFlow 2.14.x  
+- Android SDK 33+  
+- Android Studio or VS Code (Flutter plugin)  
 - Android emulator or physical device
 
-### Run the App
+### Run Locally
 
 ```bash
 git clone https://github.com/furkangenca/archify-mobile-ai.git
@@ -84,19 +76,19 @@ flutter pub get
 flutter run
 ```
 
-    📦 Make sure the .tflite model file is located under /assets/model/ and listed in pubspec.yaml.
+> ✅ Ensure `model.tflite` is placed under `/assets/model/` and registered in `pubspec.yaml`.
 
 ---
 
-## 📬 Contact
+## 👤 About
 
 **Furkan Gença**  
-*Graduation Project — B.Sc. Software Engineering (2025)*  
-[@furkangenca](https://github.com/furkangenca)
+Graduation Project — B.Sc. Software Engineering (2025)  
+GitHub: [@furkangenca](https://github.com/furkangenca)
+
 ---
 
 ## 📄 License
 
-This project is licensed under the [MIT License](./LICENSE).  
-You are free to use, modify, and distribute it under the terms of this license.
-
+Licensed under the [MIT License](./LICENSE).  
+You may use, modify, and distribute this project under its terms.
