@@ -1,24 +1,60 @@
-# 🏛️ Archify — AI-Powered Mobile App for Architectural Style Recognition
+#  Archify – Architectural Style Recognition with Deep Learning
 
-**Archify** is a Flutter-based mobile application that classifies architectural styles from building photos using an on-device deep learning model.
+Archify is a mobile application that classifies architectural styles from building images using a lightweight deep learning model optimized for on-device inference.
 
-Originally developed as a B.Sc. graduation project, the app leverages **TensorFlow Lite** and **MobileNetV2** to deliver fast, offline predictions.
-
-> 🏛️ Trained on 10K+ images across 25 architectural styles  
-> 📱 Real-time inference with TensorFlow Lite, no internet required
+The project focuses on computer vision, transfer learning, and deploying deep learning models on mobile devices using TensorFlow Lite.
 
 ---
 
-## 🧠 Key Features
-
-- Classifies styles such as Art Deco, Gothic, Bauhaus, Romanesque, etc.
-- Uses transfer learning with frozen **MobileNetV2** base layers
-- Model optimized for mobile inference (`.tflite`)
-- Fully offline — no server or cloud dependency
+## Tech Stack
+- Mobile: Flutter
+- ML: TensorFlow, Keras, TensorFlow Lite
+- Model Optimization: Keras Tuner
+- Language: Python, Dart
 
 ---
 
-## 📷 Demo Preview
+## Key Features
+- Classification of 25 architectural styles from images
+- Transfer learning using MobileNetV2
+- Fully offline inference with TensorFlow Lite
+- Mobile-optimized model for real-time predictions
+- No server or cloud dependency
+
+---
+
+## Architecture & Design
+
+### Model Architecture
+- Backbone: **MobileNetV2**
+- Transfer learning with frozen convolutional layers
+- Custom classification head trained on architectural styles
+
+### Dataset & Training
+- Dataset size: 10,113 images
+- Number of classes: 25 architectural styles
+- Data sourced from public architectural image datasets
+- Hyperparameter tuning performed using Keras Tuner
+
+### Evaluation Metrics
+| Metric | Value |
+|------|-------|
+| Validation Accuracy | 57% |
+| Macro F1 Score | 0.56 |
+
+The results reflect the inherent difficulty of architectural style classification due to visual similarity between classes.
+
+---
+
+## Mobile Integration
+- Trained model converted to `.tflite` format
+- Model embedded directly into the Flutter application
+- All inference runs locally on the device (Android)
+- Real-time predictions from camera or gallery images
+
+---
+
+## Screenshots
 
 | Input Image | Prediction |
 |------------|------------|
@@ -26,69 +62,21 @@ Originally developed as a B.Sc. graduation project, the app leverages **TensorFl
 
 ---
 
-## 📊 Dataset
-
-- **Source:** [Architectural Styles Dataset (Kaggle)](https://www.kaggle.com/datasets/dumitrux/architectural-styles-dataset)  
-- **Size:** 10,113 images  
-- **Classes:** 25 architectural styles  
-- **Origin:** Public image search and ECCV 2014 dataset
-
----
-
-## 🧪 Model Overview
-
-- **Architecture:** MobileNetV2 (transfer learning, frozen conv layers)  
-- **Tuning:** Hyperparameters optimized with **Keras Tuner**  
-- **Performance:**  
-  - Accuracy: **57%** (validation)  
-  - Macro F1-score: **0.56**
-
-### Stack
-
-- TensorFlow · Keras · Keras Tuner  
-- Python · Flutter · TensorFlow Lite
+## What I Learned
+- Applying transfer learning to computer vision problems
+- Optimizing deep learning models for mobile deployment
+- Handling multi-class image classification challenges
+- Deploying and running AI models on-device with TensorFlow Lite
 
 ---
 
-## 📱 Mobile Integration
-
-- `.tflite` model deployed inside Flutter app  
-- Inference runs locally on device (Android)  
-- Instant predictions from captured or uploaded images
-
----
-
-## ⚙️ Setup & Run
-
-### Requirements
-- Flutter 3.22+  
-- TensorFlow 2.14.x  
-- Android SDK 33+  
-- Android Studio or VS Code (Flutter plugin)  
-- Android emulator or physical device
-
-### Run Locally
-
-```bash
-git clone https://github.com/furkangenca/archify-mobile-ai.git
-cd archify-mobile-ai
-flutter pub get
-flutter run
-```
-
-> ✅ Ensure `model.tflite` is placed under `/assets/model/` and registered in `pubspec.yaml`.
+## Setup
+1. Clone the repository
+2. Install Flutter dependencies
+3. Ensure the TensorFlow Lite model is placed under `assets/model/`
+4. Run the application on an Android emulator or device
 
 ---
 
-## 👤 About
-
-**Furkan Gença**  
-Graduation Project — B.Sc. Software Engineering (2025)  
-GitHub: [@furkangenca](https://github.com/furkangenca)
-
----
-
-## 📄 License
-
-Licensed under the [MIT License](./LICENSE).  
-You may use, modify, and distribute this project under its terms.
+## License
+This project is licensed under the MIT License.
