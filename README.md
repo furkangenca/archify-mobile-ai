@@ -62,14 +62,6 @@ The results reflect the inherent difficulty of architectural style classificatio
 
 ---
 
-## What I Learned
-- Applying transfer learning to computer vision problems
-- Optimizing deep learning models for mobile deployment
-- Handling multi-class image classification challenges
-- Deploying and running AI models on-device with TensorFlow Lite
-
----
-
 ## Setup
 1. Clone the repository
 2. Install Flutter dependencies
